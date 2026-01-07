@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css">
 </head>
 <body>
+
     <!-- Navigation -->
     <nav class="navbar">
         <div class="container">
@@ -54,7 +55,7 @@
     <section class="why-section" id="why">
         <div class="container">
             <h2 class="section-title">왜 '점핑'인가요?</h2>
-            
+
             <div class="why-grid">
                 <div class="why-card">
                     <div class="why-icon">
@@ -63,7 +64,7 @@
                     <h3>단 45분의 기적</h3>
                     <p>1시간에 최대 1,000kcal 소모! 달리스고 장거리 달리기보다 훨씬 효율적인 운동입니다.</p>
                 </div>
-                
+
                 <div class="why-card">
                     <div class="why-icon cyan">
                         <i class="fas fa-shield-alt"></i>
@@ -71,7 +72,7 @@
                     <h3>관절 무리 NO</h3>
                     <p>트램폴린이 충격의 80% 이상을 흡수하여 관절염이나 무릎 통증 걱정 없이 안전하게 운동할 수 있습니다.</p>
                 </div>
-                
+
                 <div class="why-card">
                     <div class="why-icon pink">
                         <i class="fas fa-smile-beam"></i>
@@ -88,7 +89,7 @@
         <div class="container">
             <h2 class="section-title">회원권 안내</h2>
             <p class="section-subtitle">HUGFIT STAR MEMBERSHIP</p>
-            
+
             <div class="membership-grid">
                 <div class="membership-card">
                     <div class="card-header">
@@ -105,7 +106,7 @@
                         <li><i class="fas fa-check"></i> 기초 체력 증진에 최적</li>
                     </ul>
                 </div>
-                
+
                 <div class="membership-card featured">
                     <div class="card-header">
                         <div class="card-badge-special">베스트 셀러</div>
@@ -122,7 +123,7 @@
                         <li><i class="fas fa-check"></i> 집중 다이어트 코스</li>
                     </ul>
                 </div>
-                
+
                 <div class="membership-card">
                     <div class="card-header">
                         <div class="card-badge cyan">자유로운 이용</div>
@@ -139,7 +140,7 @@
                     </ul>
                 </div>
             </div>
-            
+
             <!-- Special Program -->
             <div class="special-program">
                 <div class="program-content">
@@ -185,7 +186,7 @@
         <div class="container">
             <h2 class="section-title">칼로리 삭제 시뮬레이션</h2>
             <p class="section-subtitle">HOW MUCH CALORIES WILL YOU BURN?</p>
-            
+
             <div class="calculator-card">
                 <div class="calculator-form">
                     <div class="form-row">
@@ -193,7 +194,7 @@
                             <label>현재 몸무게</label>
                             <input type="number" id="weight" value="65" class="form-input" placeholder="kg">
                         </div>
-                        
+
                         <div class="form-group">
                             <label>운동 시간</label>
                             <select id="duration" class="form-select">
@@ -203,23 +204,23 @@
                             </select>
                         </div>
                     </div>
-                    
+
                     <button class="btn btn-calculate" onclick="calculateCalories()">결과 확인하기</button>
                 </div>
-                
+
                 <div class="calculator-results" id="results" style="display:none;">
                     <div class="result-grid">
                         <div class="result-card">
                             <div class="result-label">예상 소모 칼로리</div>
                             <div class="result-value green" id="caloriesResult">404 kcal</div>
                         </div>
-                        
+
                         <div class="result-card">
                             <div class="result-label">조깅 환산 거리</div>
                             <div class="result-value cyan" id="distanceResult">약 8.2 km 조깅</div>
                         </div>
                     </div>
-                    
+
                     <div class="result-tip">
                         <i class="fas fa-fire"></i>
                         <span>한 달(20일) 꾸준히 하시면 체지방량 약 <strong id="fatLoss">1.1kg</strong> 감량 가능!</span>
@@ -233,33 +234,36 @@
     <section class="location-section" id="location">
         <div class="container">
             <h2 class="section-title">허그핏스타점핑<br><span class="highlight-text">상담 및 오시는 길</span></h2>
-            
+
             <div class="location-grid">
                 <div class="location-map">
                     <img src="images/map-location.jpg" alt="허그핏스타점핑 위치" class="map-image">
                 </div>
-                
+
                 <div class="location-info">
-                    <div class="info-card">
+
+                    <!-- ✅ 모바일에서 주소 클릭 시 네이버/카카오 지도 연결 -->
+                    <div class="info-card" id="address-card">
                         <div class="info-icon green">
                             <i class="fas fa-map-marker-alt"></i>
                         </div>
                         <div class="info-content">
                             <div class="info-label">ADDRESS</div>
-                            <div class="info-value">군산 나운5길 16 2층 허그핏스타점핑</div>
+                            <div class="info-value" id="address-text">군산 나운5길 16 2층 허그핏스타점핑</div>
                         </div>
                     </div>
-                    
-                    <div class="info-card">
+
+                    <!-- ✅ 모바일에서 전화 연결 -->
+                    <div class="info-card" id="contact-card">
                         <div class="info-icon cyan">
                             <i class="fas fa-phone-alt"></i>
                         </div>
                         <div class="info-content">
                             <div class="info-label">CONTACT</div>
-                            <div class="info-value">0507-1420-0735</div>
+                            <div class="info-value" id="contact-phone">0507-1420-0735</div>
                         </div>
                     </div>
-                    
+
                     <div class="info-card">
                         <div class="info-icon pink">
                             <i class="fas fa-clock"></i>
@@ -269,6 +273,7 @@
                             <div class="info-value">평일 09:30 - 21:30 (수업 시간 별도 문의)</div>
                         </div>
                     </div>
+
                 </div>
             </div>
         </div>
@@ -278,7 +283,7 @@
     <section class="gallery-section" id="gallery">
         <div class="container">
             <h2 class="section-title">HAPPY STAR JUMPERS</h2>
-            
+
             <div class="gallery-grid">
                 <div class="gallery-item">
                     <img src="images/gallery-1.jpg" alt="트램폴린 운동 1" class="gallery-image">
@@ -304,7 +309,7 @@
                     <i class="fas fa-star"></i>
                     <span>허그핏스타점핑</span>
                 </div>
-                <p class="footer-text">군산 나운동 지역 주민분들의 건강하고 행복한 삶을 위해 항상 최고의 에너지로 함께하겠습니다.</p>
+                <p class="footer-text">군산 지역 주민분들의 건강하고 행복한 삶을 위해 항상 최고의 에너지로 함께하겠습니다.</p>
                 <div class="footer-contact">
                     <p>문의: 0507-1420-0735</p>
                     <p>주소: 군산 나운5길 16 2층</p>
@@ -317,5 +322,84 @@
     </footer>
 
     <script src="js/main.js"></script>
+
+    <!-- ✅ 모바일에서만: 전화 / 지도 연결 -->
+    <script>
+    (function () {
+        // ===== 설정값 =====
+        const phoneDisplay = '0507-1420-0735';
+        const phoneTel = '050714200735';
+
+        const addressText = '군산 나운5길 16';
+        const placeQuery = '군산 나운5길 16 허그핏스타점핑';
+
+        // 네이버/카카오 앱 스킴 + 웹 대체 링크
+        const naverApp = 'nmap://search?query=' + encodeURIComponent(placeQuery) + '&appname=hugfit.site';
+        const naverWeb = 'https://map.naver.com/v5/search/' + encodeURIComponent(placeQuery);
+
+        const kakaoApp = 'kakaomap://search?q=' + encodeURIComponent(placeQuery);
+        const kakaoWeb = 'https://map.kakao.com/link/search/' + encodeURIComponent(placeQuery);
+
+        // 모바일 판별
+        const isMobile =
+            window.matchMedia('(max-width: 768px)').matches ||
+            /Android|iPhone|iPad|iPod/i.test(navigator.userAgent);
+
+        if (!isMobile) return; // PC에서는 동작하지 않게
+
+        // ===== 전화 연결 =====
+        const contactCard = document.getElementById('contact-card');
+        const phoneEl = document.getElementById('contact-phone');
+
+        if (phoneEl) phoneEl.textContent = phoneDisplay;
+
+        if (contactCard) {
+            contactCard.style.cursor = 'pointer';
+            contactCard.addEventListener('click', function () {
+                window.location.href = 'tel:' + phoneTel;
+            });
+            contactCard.setAttribute('role', 'link');
+            contactCard.setAttribute('aria-label', '전화걸기 ' + phoneDisplay);
+        }
+
+        // ===== 주소 → 지도 연결 =====
+        const addressCard = document.getElementById('address-card');
+        const addressEl = document.getElementById('address-text');
+
+        if (addressEl) addressEl.textContent = '군산 나운5길 16 2층 허그핏스타점핑';
+
+        function openMapSmart() {
+            // 1) 네이버 지도 앱 시도
+            const startedAt = Date.now();
+            window.location.href = naverApp;
+
+            // 2) 앱이 없으면 일정 시간 후 카카오 앱 시도 → 그래도 안 되면 웹으로
+            setTimeout(function () {
+                // iOS/안드로이드 환경마다 다르지만, 앱이 열리면 페이지가 백그라운드로 가면서 타이머가 멈추는 경우가 많음
+                // 따라서 "여전히 페이지에 남아있다"는 가정 하에 다음 단계 실행
+                if (Date.now() - startedAt < 1500) {
+                    // 네이버 앱이 안 열린 것으로 보고 카카오 앱 시도
+                    const startedAt2 = Date.now();
+                    window.location.href = kakaoApp;
+
+                    setTimeout(function () {
+                        if (Date.now() - startedAt2 < 1500) {
+                            // 카카오도 안 열리면 네이버 웹으로(가장 안정적)
+                            window.location.href = naverWeb;
+                        }
+                    }, 1200);
+                }
+            }, 1200);
+        }
+
+        if (addressCard) {
+            addressCard.style.cursor = 'pointer';
+            addressCard.addEventListener('click', openMapSmart);
+            addressCard.setAttribute('role', 'link');
+            addressCard.setAttribute('aria-label', '지도 열기 ' + addressText);
+        }
+    })();
+    </script>
+
 </body>
 </html>
